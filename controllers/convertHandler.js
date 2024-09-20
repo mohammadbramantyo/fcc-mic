@@ -27,11 +27,17 @@ function ConvertHandler() {
     let resultStr = "";
     let resultNum = 1;
 
-    const unitStr = this.getUnit(input);
-    // console.log('unit: '+unitStr);
+    // const unitStr = this.getUnit(input);
+    
+    for (let index = 0; index < input.length; index++) {
+      const element = input[index];
+      if ((/[a-zA-Z]/).test(element)) {
+        break;
+      }
+      resultStr += element;
+    }
 
-    resultStr = input.substring(0, input.length - unitStr.length);
-    // console.log("res:"+resultStr + "unnitStr:" + unitStr);
+    // resultStr = input.substring(0, input.length - unitStr.length);
 
     if (resultStr == "") {
       return resultNum;
@@ -46,7 +52,7 @@ function ConvertHandler() {
       !decimalRegex.test(resultStr) &&
       !fractionRegex.test(resultStr)) {
 
-      throw new TypeError("invalid number your number is: " + resultStr);
+      throw new TypeError("invalid number");
 
     }
 
@@ -89,7 +95,7 @@ function ConvertHandler() {
     // invalid unit
     if (!(units.includes(result.toLowerCase()))) {
 
-      throw new TypeError("invalid unit your unit is: " + unitString);
+      throw new TypeError("invalid unit");
 
     }
 
