@@ -83,7 +83,7 @@ function ConvertHandler() {
     }
 
 
-    result = input.substring(input.length - unitlength, input.length)
+    result = input.toLowerCase().substring(input.length - unitlength, input.length)
 
 
     // invalid unit
