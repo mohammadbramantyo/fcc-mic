@@ -13,7 +13,6 @@ module.exports = function (app) {
     const initUnit = convertHandler.getUnit(input);
     const returnUnit = convertHandler.getReturnUnit(initUnit);
     const returnNum = convertHandler.convert(initNum, initUnit);
-    console.log("return unit:"+returnUnit);
     
 
     const response = {
@@ -24,7 +23,6 @@ module.exports = function (app) {
       "string": convertHandler.getString(initNum,initUnit,returnNum,returnUnit)
     }
 
-    console.log(req.query.input);
     res.json(response)
 
   })

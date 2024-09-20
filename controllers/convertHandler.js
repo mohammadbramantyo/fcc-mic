@@ -92,8 +92,9 @@ function ConvertHandler() {
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    const returnUnitString = this.spellOutUnit(returnUnit)
-    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnitString}`;
+    const initUnitString = this.spellOutUnit(initUnit);
+    const returnUnitString = this.spellOutUnit(returnUnit);
+    let result = `${initNum} ${initUnitString} converts to ${returnNum} ${returnUnitString}`;
 
     return result;
   };
