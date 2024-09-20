@@ -36,13 +36,13 @@ function ConvertHandler() {
     let result;
 
     const num = this.getNum(input);
-    result = input.substring(num.length - 1, input.length)
+    result = input.substring(num.length, input.length)
 
     return result;
   };
 
   this.getReturnUnit = function (initUnit) {
-    let result = unitPairsReturn[initUnit];
+    let result = unitPairsReturn[initUnit];  
 
     return result;
   };
@@ -88,12 +88,12 @@ function ConvertHandler() {
     }
 
 
-    return result;
+    return result.toFixed(5);
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
     const returnUnitString = this.spellOutUnit(returnUnit)
-    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnitString} `;
+    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnitString}`;
 
     return result;
   };
