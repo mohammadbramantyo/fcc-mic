@@ -29,6 +29,25 @@ function ConvertHandler() {
       result += element;
     }
 
+    // Invalid input number Handling
+    const wholeNumberRegex = /^\d+$/;
+    const decimalRegex = /^\d*\.\d+$/;
+    const fractionRegex = /^\d+(\.\d+)?\/\d+(\.\d+)?$/;
+
+    if (result == "") {
+      result = "1";
+    }
+
+    if (!wholeNumberRegex.test(result) &&
+      !decimalRegex.test(result) &&
+      !fractionRegex.test(result)) {
+
+      throw new TypeError("invalid number");
+
+    }
+
+
+
     return result;
   };
 
@@ -42,7 +61,7 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function (initUnit) {
-    let result = unitPairsReturn[initUnit];  
+    let result = unitPairsReturn[initUnit];
 
     return result;
   };
